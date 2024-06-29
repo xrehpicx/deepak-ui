@@ -39,23 +39,20 @@ export async function POST(request: Request) {
 
   const message = await openai.beta.threads.messages.create(thread.id, {
     role: "user",
-    content: [
-      {
-        type: "text",
-        text: user_query,
-      } as any,
-    ].concat(
-      image_url
-        ? ([
-            {
-              type: "image_url",
-              image_url: {
-                url: image_url as string,
-              },
+    content: image_url
+      ? [
+          {
+            type: "image_url",
+            image_url: {
+              url: image_url as string,
             },
-          ] as any)
-        : []
-    ),
+          },
+          {
+            type: "text",
+            text: user_query,
+          },
+        ]
+      : user_query,
   });
 
   let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
@@ -71,5 +68,3 @@ export async function POST(request: Request) {
 
 // create example curl post call for the above
 // curl -X POST -H "Content-Type: application/json" -d '{"url":"https://example.com","user_query":"What is the weather today?"}' http://localhost:3000/api/ai
-
-
