@@ -9,6 +9,8 @@ export function isClient() {
   return typeof window !== "undefined";
 }
 
+export const loginUrl = "https://deepak-api.prashne.com/auth/google/authorize";
+
 export function login() {
-  window.location.href = "https://deepak-api.prashne.com/auth/google/authorize";
+  window.location.href = loginUrl;
 }
