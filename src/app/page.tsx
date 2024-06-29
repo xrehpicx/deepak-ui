@@ -8,12 +8,12 @@ export default function Home() {
       <div className="flex my-auto gap-4 justify-center items-center">
         <div>
           <h1 className="text-4xl font-bold">Deepak</h1>
-          <span>
-            Knowledge assistant
-          </span>
+          <span>Knowledge assistant</span>
         </div>
         <Separator orientation="vertical" className="h-12" />
-        <Button autoFocus className="rounded-full font-bold">LOGIN WITH GOOGLE</Button>
+        <Button autoFocus size="lg" className="rounded-full font-bold">
+          LOGIN WITH GOOGLE
+        </Button>
       </div>
     </main>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ShortcutProvider } from "./shortcut-handler";
 
 const inter = DM_Sans({ subsets: ["latin"], weight: ["400", "800", "600"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "dark")}>{children}</body>
+      <body className={cn(inter.className, "dark")}>
+        <ShortcutProvider>{children}</ShortcutProvider>
+      </body>
     </html>
   );
 }
