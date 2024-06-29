@@ -6,6 +6,8 @@ import OpenAI from "openai";
 
 const openai = new OpenAI();
 
+export const runtime = 'nodejs'
+
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("OPENAI_API_KEY is not set");
 }
