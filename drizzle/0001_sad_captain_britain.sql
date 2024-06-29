@@ -1,0 +1,1 @@
+ALTER TABLE "user_thread" ADD COLUMN "url" text NOT NULL;

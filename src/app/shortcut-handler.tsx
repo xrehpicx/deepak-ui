@@ -2,6 +2,7 @@
 import { createContext, PropsWithChildren, useEffect } from "react";
 import Mousetrap from "mousetrap";
 import { login } from "@/lib/utils";
+
 const ShortcutContext = createContext(null);
 
 export function ShortcutProvider({ children }: PropsWithChildren<{}>) {

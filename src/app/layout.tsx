@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ShortcutProvider } from "./shortcut-handler";
+import { SessionProvider } from "next-auth/react";
 
 const inter = DM_Sans({ subsets: ["latin"], weight: ["400", "800", "600"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, "dark")}>
-        <ShortcutProvider>{children}</ShortcutProvider>
+        <SessionProvider>
+          <ShortcutProvider>{children}</ShortcutProvider>
+        </SessionProvider>
       </body>
     </html>
   );
