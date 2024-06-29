@@ -10,5 +10,5 @@ export function isClient() {
 }
 
 export function login() {
-  window.location.href = "/login";
+  window.location.href = "https://deepak-api.prashne.com/auth/google/authorize";
 }
